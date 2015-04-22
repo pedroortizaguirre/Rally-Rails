@@ -1,0 +1,17 @@
+Display results
+
+
+<table>
+<tr>
+<td>Iteration Name</td>
+<td>Created at</td>
+</tr>
+<% @results.each do |r| %>
+<tr>
+<td><%= r.Name %></td>
+<td><%= r.CreationDate %></td>
+</tr>
+<% end %>
+</table>
+
+
