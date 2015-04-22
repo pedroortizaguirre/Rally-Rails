@@ -11,13 +11,14 @@
 			rally = RallyAPI::RallyRestJson.new(config)
 
 			defect_query = RallyAPI::RallyQuery.new()
-			defect_query.type = "iteration"
-			defect_query.fetch = "Name,CreationDate"
-  			#defect_query.limit      = 10          #optional - default is 99999
- 			#defect_query.page_size  = 10
+			defect_query.query_string ='(Iteration.Name = "IT-4 24/Mar-6/Apr Profile & Team Pages")'
+			defect_query.type = "hierarchicalrequirement"
+			defect_query.fetch = "Name,FormattedID,ScheduleState,PlanEstimate,Iteration,TaskActualTotal,TaskEstimateTotal,Tasks"
+  		# 	defect_query.limit      = 10          #optional - default is 99999
+ 			# defect_query.page_size  = 10
   			defect_query.project_scope_up = false
   			defect_query.project_scope_down = true
-  			defect_query.order = "CreationDate Desc"
+  			#defect_query.order = "FormattedID Desc"
 
 			@results = rally.find(defect_query)
 		end

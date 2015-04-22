@@ -1,17 +1,23 @@
 Display results
 
 
-<table>
-<tr>
-<td>Iteration Name</td>
-<td>Created at</td>
-</tr>
+
+Iteration Name
+Created at
+ <br/>
 <% @results.each do |r| %>
-<tr>
-<td><%= r.Name %></td>
-<td><%= r.CreationDate %></td>
-</tr>
+ <br/>
+<p><b>Name:  </b><%= r.Name %><br>
+<b>ID:  </b><%= r.FormattedID %><br>
+<b>Iteration:  </b><%= r.Iteration %><br>
+<b>Plan Estimate:  </b><%= r.PlanEstimate %><br>
+<b>Task Actuals:  </b><%= r.TaskActualTotal %><br>
+<b>Task EStimate:  </b><%= r.TaskEstimateTotal %><br>
+<% r.Tasks.each do || %>
+<%= r.Tasks["_refObjectName"] %></p>
 <% end %>
-</table>
+<br>
+<% end %>
+
 
 
