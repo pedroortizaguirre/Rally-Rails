@@ -1,23 +1,13 @@
-Display results
 
-
-
-Iteration Name
-Created at
- <br/>
+<br/>
 <% @results.each do |r| %>
- <br/>
-<p><b>Name:  </b><%= r.Name %><br>
-<b>ID:  </b><%= r.FormattedID %><br>
-<b>Iteration:  </b><%= r.Iteration %><br>
-<b>Plan Estimate:  </b><%= r.PlanEstimate %><br>
-<b>Task Actuals:  </b><%= r.TaskActualTotal %><br>
-<b>Task EStimate:  </b><%= r.TaskEstimateTotal %><br>
-<% r.Tasks.each do || %>
-<%= r.Tasks["_refObjectName"] %></p>
-<% end %>
-<br>
-<% end %>
+<br/>
+<p><b>Name:  </b><%= link_to r.Name, controller: "rally", action: "show", id: r.ObjectID %><br>
+	<b>ID:  </b><%= r.ObjectID %><br>
+
+	<!-- <b>End Date:  </b><%= r.EndDate %><br> -->
+	<br>
 
 
-
+	
+	<% end %>
