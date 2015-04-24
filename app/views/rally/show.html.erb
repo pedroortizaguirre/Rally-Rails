@@ -1,6 +1,7 @@
-<% @results.each do |r| %>
+<h1><%= @user_stories.first.Iteration.Name %></h1>
+<% @user_stories.each do |r| %>
  <br/>
-<p> <b>FormattedID:  </b><%= r.FormattedID %><br>
+<p> <b>ID:  </b><%= r.FormattedID %><br>
 <b>Name:  </b><%= r.Name %><br>
 <b>Schedule State:  </b><%= r.ScheduleState %><br>
 <b>Plan Estimate:  </b><%= r.PlanEstimate %><br>
@@ -13,3 +14,23 @@
 <br>
 <% end %>
 
+<br>
+<hr>
+<br>
+
+<% @bugs.each do |r| %>
+ <br/>
+<p> <b>ID:  </b><%= r.FormattedID %><br>
+<b>Name:  </b><%= r.Name %><br>
+<b>Environment:  </b><%= r.Environment %><br>
+<b>Iteration:  </b><%= r.Iteration %><br>
+<b>Owner:  </b><%= r.Owner %><br>
+<b>State:  </b><%= r.State %><br>
+<b>Severity:  </b><%= r.Severity %><br>
+<b>Submitted By:  </b><%= r.SubmittedBy %><br>
+<b>Priorityl:  </b><%= r.Priority %><br>
+
+
+<!-- <b>End Date:  </b><%= r.EndDate %><br> -->
+<br>
+<% end %>
