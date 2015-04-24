@@ -1,36 +1,8 @@
-<h1><%= @user_stories.first.Iteration.Name %></h1>
-<% @user_stories.each do |r| %>
- <br/>
-<p> <b>ID:  </b><%= r.FormattedID %><br>
-<b>Name:  </b><%= r.Name %><br>
-<b>Schedule State:  </b><%= r.ScheduleState %><br>
-<b>Plan Estimate:  </b><%= r.PlanEstimate %><br>
-<b>Task Actual Total:  </b><%= r.TaskActualTotal %><br>
-<b>Task Estimate Total:  </b><%= r.TaskEstimateTotal %><br>
-<b>Owner:  </b><%= r.Owner %><br>
 
-
-<!-- <b>End Date:  </b><%= r.EndDate %><br> -->
-<br>
-<% end %>
-
-<br>
-<hr>
-<br>
-
-<% @bugs.each do |r| %>
- <br/>
-<p> <b>ID:  </b><%= r.FormattedID %><br>
-<b>Name:  </b><%= r.Name %><br>
-<b>Environment:  </b><%= r.Environment %><br>
-<b>Iteration:  </b><%= r.Iteration %><br>
-<b>Owner:  </b><%= r.Owner %><br>
-<b>State:  </b><%= r.State %><br>
-<b>Severity:  </b><%= r.Severity %><br>
-<b>Submitted By:  </b><%= r.SubmittedBy %><br>
-<b>Priorityl:  </b><%= r.Priority %><br>
-
-
-<!-- <b>End Date:  </b><%= r.EndDate %><br> -->
-<br>
-<% end %>
+<br/>
+<% @projects.each do |r| %>
+<br/>
+<% r.ObjectID %>
+<p><b>Name:  </b><%= link_to r.Name, controller: "rally", action: "show", id: r.ObjectID %><br>
+<%= r.ObjectID %>
+	<% end %>

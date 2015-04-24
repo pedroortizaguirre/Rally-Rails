@@ -1,13 +1,15 @@
 
 <br/>
-<% @results.each do |r| %>
+<% @workspace.each do |w| %>
 <br/>
-<p><b>Name:  </b><%= link_to r.Name, controller: "rally", action: "show", id: r.ObjectID %><br>
-	<b>ID:  </b><%= r.ObjectID %><br>
 
-	<!-- <b>End Date:  </b><%= r.EndDate %><br> -->
+
+	<b>Name:  </b> <%= w.Name %>
+<p>
+	<% w.Projects.each do |p| %>
 	<br>
+	<b>Project: </b> <%= link_to p, controller: "rally", action: "show",:id => p.ObjectID %><br>
 
-
-	
-	<% end %>
+<% end %>
+</p>
+<% end %>
