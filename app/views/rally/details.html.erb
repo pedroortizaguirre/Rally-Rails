@@ -1,11 +1,47 @@
 
-<h1> <%= @iterations.first.Name %></h1>
-<br>
-<p><b>Schedule State: </b><%= @iterations.first.ScheduleState %></p>
-<p><b>Plan Estimate: </b><%= @iterations.first.PlanEstimate %></p>
-<p><b>Task Actual Total: </b><%= @iterations.first.TaskActualTotal %></p>
-<p><b>Task Estimate Total: </b><%= @iterations.first.TaskEstimateTotal %></p>
-<p><b>Owner: </b><%= @iterations.first.Owner %></p>
-<p><b>EndDate: </b><%= @iterations.first.EndDate %></p>
-<br>
-<hr>
+<h1><%= @iterations.first.Name %></h1>
+<p> <b>ID:  </b><%= @iterations.first.ObjectID %><br>
+	<b>State :  </b><%= @iterations.first.State %><br>
+	<b>Planned Velocity:  </b><%= @iterations.first.PlannedVelocity %><br>
+	<b>Start Date:  </b><%= @iterations.first.StartDate %><br>
+	<b>End Date:  </b><%= @iterations.first.EndDate %><br>
+	<b>PlanEstimate:  </b><%= @PlanEstimate %><br>
+	<b>TaskActualTotal:  </b><%= @TaskActualTotal %><br>
+	<b>TaskEstimateTotal:  </b><%= @TaskEstimateTotal %><br>
+
+	<hr>
+<h1>User Stories</h1>
+	<% @user_stories.each do |r| %>
+	<p> <b>ID:  </b><%= r.FormattedID %><br>
+		<b>Name:  </b><%= r.Name %><br>
+		<b>Schedule State:  </b><%= r.ScheduleState %><br>
+		<b>Plan Estimate:  </b><%= r.PlanEstimate %><br>
+		<b>Task Actual Total:  </b><%= r.TaskActualTotal %><br>
+		<b>Task Estimate Total:  </b><%= r.TaskEstimateTotal %><br>
+		<b>Owner:  </b><%= r.Owner %><br>
+
+
+		<!-- <b>End Date:  </b><%= r.EndDate %><br> -->
+		<br>
+		<% end %>
+
+		<br>
+		<hr>
+		<br>
+<h1>Bugs</h1>
+		<% @bugs.each do |r| %>
+		<br/>
+		<p> <b>ID:  </b><%= r.FormattedID %><br>
+			<b>Name:  </b><%= r.Name %><br>
+			<b>Environment:  </b><%= r.Environment %><br>
+			<b>Iteration:  </b><%= r.Iteration %><br>
+			<b>Owner:  </b><%= r.Owner %><br>
+			<b>State:  </b><%= r.State %><br>
+			<b>Severity:  </b><%= r.Severity %><br>
+			<b>Submitted By:  </b><%= r.SubmittedBy %><br>
+			<b>Priorityl:  </b><%= r.Priority %><br>
+
+
+			<!-- <b>End Date:  </b><%= r.EndDate %><br> -->
+			<br>
+			<% end %>
