@@ -5,4 +5,5 @@ get 'rally/show'
 
 resources :rally
 
+get 'details/:id', to: 'rally#details', as: 'details'
 end

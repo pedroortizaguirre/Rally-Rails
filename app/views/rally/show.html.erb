@@ -5,4 +5,7 @@
 <% r.ObjectID %>
 <p><b>Name:  </b><%= link_to r.Name, controller: "rally", action: "show", id: r.ObjectID %><br>
 <%= r.ObjectID %>
+<% r.Iterations.each do |i| %>
+<p><%= link_to i, controller: "rally", action: "details", id: i.ObjectID %></p>
+<% end %>
 	<% end %>

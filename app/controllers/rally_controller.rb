@@ -12,8 +12,11 @@
 			@projects=Rally.display_projects(params[:name])
 		end
 
-		def show_iterations	
-			@results=Rally.display_iterations
+		def details		
+			@iterations=Rally.display_iterations(params[:id])		
+			# @user_stories= Rally.display_user_stories(params[:id])
+			
+			puts "#{@iterations.inspect}<<<<<<<<<<<"
 		end
 
 		def show_user_stories 

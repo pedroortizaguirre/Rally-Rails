@@ -20,13 +20,14 @@ class Rally < ActiveRecord::Base
  			defect_query.project_scope_down = true 
  			 			
  			workspace = rally.find(defect_query)
+
  	end
  		def self.display_projects(id)
  			rally = RallyAPI::RallyRestJson.new(@config)
  			defect_query = RallyAPI::RallyQuery.new() 			
   			defect_query.query_string ="(ObjectID = #{id})"
  			defect_query.type = "Projects"
- 			defect_query.fetch = "Name,FormattedID,ObjectID"
+ 			defect_query.fetch = "Name,FormattedID,ObjectID,Iterations"
  			defect_query.project_scope_up = false
  			defect_query.project_scope_down = true 
  			 			
@@ -38,14 +39,15 @@ class Rally < ActiveRecord::Base
 		defect_query = RallyAPI::RallyQuery.new()
 		defect_query.query_string ="(ObjectID = #{id})"
 		defect_query.type = "Iteration"
-		defect_query.fetch = "ObjectID,EndDate,Name,ScheduleState,PlanEstimate,Iteration,TaskActualTotal,Owner,TaskEstimateTotal,Tasks"
+		defect_query.fetch = "ObjectID,EndDate,Name,ScheduleState,PlanEstimate,Iteration,Project,TaskActualTotal,Owner,TaskEstimateTotal,Tasks"
   			#defect_query.limit      = 10          #optional - default is 99999
  			# defect_query.page_size  = 10
  			defect_query.project_scope_up = false
  			defect_query.project_scope_down = true
   			#defect_query.order = "FormattedID Desc"
   			results = rally.find(defect_query)
-  		end 
+
+  	end 
 
   		def self.display_user_stories(id)
   			rally = RallyAPI::RallyRestJson.new(@config)
